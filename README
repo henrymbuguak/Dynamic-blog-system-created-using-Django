@@ -1,0 +1,32 @@
+This is Dynamic Blog System Created using Django Framework. The System contain the following, for backend; the system uses Mysql and frontend the system uses twitter bootstrap framework. For you to download and run the system you need to do some changes to the code. 
+
+There are few things to note:
+
+     The project is still in debug mode so in case there is an error you will be able to trace it.However for production purpose, the DEBUGE mode should be set to FALSE. To access  this setting navigate to setting.py
+     
+
+How To Run this Project:
+    We assume that you already have Django Framework and python Installed in you system.
+    Once you download the zipped file unzip it and navigate to setting.py
+    In setting.py you need to change the connection to the database
+    i.e. the following:
+            # Database
+            # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'hlab',#os.path.join(BASE_DIR, 'db.sqlite3'),
+        'USER': 'root',
+        'PASSWORD': 'password',
+    }
+}
+     
+     This project uses mysql db as mention earlier, you can change the database to anyother. Django is frexible. Once you have put the correct credetial to access the database. Navigate to main project directory where you will see the manage.py now lets create superuser.
+     
+     To create necessary tables or collections depending on our db type. Open the shell and run the following command: python manage.py syncdb you will be promoted to create a superuser.
+     
+     If everything goes well you will be able to access the blog system at http://127.0.0.1:8000/ to add the content to the blog system use the following url http://127.0.0.1:8000/admin/ 
+     which will take you to the admin interface. Login in using credetial that you used while creatin superuser.
+     
+     Incase the server is not running, just run the following command: python manage.py runserver
